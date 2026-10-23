@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urgent: Mandatory IT Security Certificate Validation</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+            color: #333333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #dcdcdc;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+        }
+        .disclaimer-banner {
+            background-color: #fff3cd;
+            color: #856404;
+            border-bottom: 2px solid #ffeeba;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .header {
+            background-color: #0d3b66;
+            color: #ffffff;
+            padding: 20px;
+            text-align: left;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+        }
+        .content {
+            padding: 24px 20px;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        .btn-wrapper {
+            margin: 24px 0;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 12px 24px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .callout {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-left: 4px solid #f5c6cb;
+            padding: 10px 14px;
+            margin: 15px 0;
+            font-size: 13px;
+        }
+        .footer {
+            background-color: #f9f9f9;
+            border-top: 1px solid #eeeeee;
+            padding: 14px 20px;
+            font-size: 11px;
+            color: #777777;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Prominent Safety & Lab Disclaimer Banner -->
+        <div class="disclaimer-banner">
+            ⚠️ ACADEMIC LAB SIMULATION EXERCISE ONLY • DO NOT ENTER PASSWORDS • ISOLATED TESTBED
+        </div>
+
+        <div class="header">
+            <h1>Internal IT Service Desk — Security Alert</h1>
+        </div>
+
+        <div class="content">
+            <p>Dear {{.FirstName}},</p>
+
+            <p>Our centralized IT systems have detected an outdated security root certificate on your assigned workstation. Due to mandatory internal compliance requirements, all user workstations must validate their configuration.</p>
+
+            <div class="callout">
+                <strong>Action Required:</strong> Failure to validate your device certificate within <strong>24 hours</strong> will result in temporary suspension of your single sign-on privileges.
+            </div>
+
+            <p>Please click the button below to initiate the self-service validation protocol:</p>
+
+            <div class="btn-wrapper">
+                <a href="{{.URL}}" class="btn" target="_blank">Validate Security Certificate Now</a>
+            </div>
+
+            <p>If you encounter difficulties during the automated verification process, submit an internal ticket via your department's designated channel.</p>
+
+            <p>Regards,<br>
+            <strong>Global IT Infrastructure & Security Operations</strong><br>
+            Internal Support Extension: 4102</p>
+        </div>
+
+        <div class="footer">
+            This message was generated as part of an authorized academic cybersecurity simulation project.<br>
+            Simulated ID: LAB-SIM-{{.RId}} | No real passwords or credentials will ever be requested.
+        </div>
+    </div>
+    <!-- GoPhish Tracking Pixel for Open Detection -->
+    {{.Tracker}}
+</body>
+</html>

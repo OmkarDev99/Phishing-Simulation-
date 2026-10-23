@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Awareness Knowledge Check</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #212529;
+            padding: 24px 16px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 36px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+        .header {
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .header h1 {
+            color: #0056b3;
+            font-size: 22px;
+            margin: 0;
+        }
+        .header .subtitle {
+            font-size: 13px;
+            color: #4a5568;
+            margin-top: 4px;
+        }
+        .badge {
+            font-size: 12px;
+            background-color: #edf2f7;
+            color: #4a5568;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .lab-note-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            color: #166534;
+            padding: 14px 18px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+            font-size: 13px;
+            line-height: 1.5;
+        }
+        .intro-text {
+            font-size: 14px;
+            color: #4a5568;
+            margin-bottom: 28px;
+        }
+        .question-card {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 20px 22px;
+            margin-bottom: 20px;
+            transition: border-color 0.2s ease;
+        }
+        .question-card.answered {
+            border-color: #cbd5e0;
+        }
+        .question-card.correct-card {
+            border-left: 5px solid #28a745;
+            background-color: #fbfdfb;
+        }
+        .question-card.incorrect-card {
+            border-left: 5px solid #dc3545;
+            background-color: #fdfbfb;
+        }
+        .question-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 14px;
+        }
+        .question-num {
+            color: #0056b3;
+            margin-right: 6px;
+        }
+        .options-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .option-item {
+            display: block;
+            margin-bottom: 10px;
+        }
+        .option-label {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 10px 14px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13.5px;
+            transition: all 0.15s ease;
+        }
+        .option-label:hover {
+            background-color: #edf2f7;
+            border-color: #cbd5e0;
+        }
+        .option-label input[type="radio"] {
+            margin-top: 3px;
+            cursor: pointer;
+        }
+        .option-label.selected-correct {
+            background-color: #e6f4ea !important;
+            border-color: #28a745 !important;
+            color: #155724;
+            font-weight: 600;
+        }
+        .option-label.selected-incorrect {
+            background-color: #fde8e8 !important;
+            border-color: #dc3545 !important;
+            color: #721c24;
+            font-weight: 600;
+        }
+        .option-label.correct-unselected {
+            background-color: #e6f4ea !important;
+            border-color: #28a745 !important;
+            color: #155724;
+            font-style: italic;
+        }
+        .explanation-box {
+            display: none;
+            margin-top: 14px;
+            padding: 12px 14px;
+            border-radius: 4px;
+            font-size: 13px;
+            line-height: 1.5;
+            border-left: 4px solid #0056b3;
+            background-color: #ebf8ff;
+            color: #2b6cb0;
+        }
+        .explanation-box strong {
+            color: #1a365d;
+        }
+        .actions-bar {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            margin-top: 28px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            font-family: inherit;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .btn-primary {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+        .btn-primary:hover {
+            background-color: #004085;
+        }
+        .btn-secondary {
+            background-color: #6c757d;
+            color: #ffffff;
+            display: none;
+        }
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+        .alert-warning-msg {
+            display: none;
+            color: #c53030;
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 8px;
+            width: 100%;
+        }
+        .score-banner {
+            display: none;
+            padding: 18px 20px;
+            border-radius: 6px;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .score-banner.score-good {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .score-banner.score-mid {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+        }
+        .score-banner.score-low {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .score-banner h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+        .score-banner p {
+            font-size: 13.5px;
+            margin: 0;
+        }
+        .footer {
+            margin-top: 36px;
+            padding-top: 14px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 12px;
+            color: #718096;
+            text-align: center;
+        }
+        @media (max-width: 600px) {
+            .container { padding: 20px 16px; }
+            .header { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div>
+                <h1>Phishing Awareness Knowledge Check</h1>
+                <div class="subtitle">Interactive Educational Quiz | College Cybersecurity Mini-Project (Randomized Questions &amp; Options)</div>
+            </div>
+            <span class="badge">Step 5: Training Activity</span>
+        </div>
+
+        <!-- Safe Lab Context Notice -->
+        <div class="lab-note-box">
+            <strong>Safe Lab Context:</strong> This quiz is part of a cybersecurity awareness mini-project using GoPhish and MailHog in an isolated local lab. It uses educational examples and does not collect passwords or personal information.
+        </div>
+
+        <p class="intro-text">
+            Test your understanding of phishing indicators, the SLAM verification method, and proper reporting steps. Question order and answer choices are randomized each round. Select one answer for each question below, then click <strong>Check Answers</strong>.
+        </p>
+
+        <!-- Score Results Banner (Hidden until submission) -->
+        <div id="scoreBanner" class="score-banner">
+            <h3 id="scoreTitle">Your Score: 0/5</h3>
+            <p id="scoreFeedback">Feedback text will appear here.</p>
+        </div>
+
+        <!-- Quiz Form -->
+        <form id="quizForm" onsubmit="return false;">
+
+            <!-- Dynamic Question Container for Randomized Questions & Options -->
+            <div id="questionsContainer"></div>
+
+            <!-- Action Buttons -->
+            <div class="actions-bar">
+                <button type="button" id="btnSubmit" class="btn btn-primary" onclick="submitQuiz()">Check Answers</button>
+                <button type="button" id="btnReset" class="btn btn-secondary" onclick="resetQuiz()">Try Again</button>
+                <div id="unansweredWarning" class="alert-warning-msg">⚠️ Please answer all 5 questions before checking your score.</div>
+            </div>
+
+        </form>
+
+        <div class="footer">
+            Cybersecurity Awareness Mini-Project • Interactive Quiz for Training &amp; Viva Voce Demonstration
+        </div>
+    </div>
+
+    <!-- Interactive Logic (Plain Vanilla JavaScript - Offline & Local Only) -->
+    <script>
+        // The master bank of 5 original questions and their respective options & explanations
+        const questionBank = [
+            {
+                id: "q_suspension",
+                questionHtml: "An email claims your account will be suspended urgently within 24 hours unless you verify your password. What should you do?",
+                options: [
+                    { text: "Click the link immediately to prevent your account from being locked out.", isCorrect: false },
+                    { text: "Do not click the link; verify through your official portal or contact IT support directly.", isCorrect: true },
+                    { text: "Forward the email to all your coworkers to ask if they received it too.", isCorrect: false }
+                ],
+                explanationHtml: "Urgent deadlines and account suspension threats are classic psychological triggers used by attackers to provoke hasty decisions. Legitimate IT departments will never demand that you verify passwords via urgent email links. Always verify directly through official channels."
+            },
+            {
+                id: "q_slam",
+                questionHtml: "What does the acronym <strong>SLAM</strong> stand for in our security awareness handout?",
+                options: [
+                    { text: "Security, Logistics, Authorization, and Monitoring.", isCorrect: false },
+                    { text: "Sender, Links, Attachments, and Message.", isCorrect: true },
+                    { text: "System, Lockdown, Antivirus, and Malware.", isCorrect: false }
+                ],
+                explanationHtml: "SLAM stands for <strong>S</strong>ender, <strong>L</strong>inks, <strong>A</strong>ttachments, and <strong>M</strong>essage. It is a systematic mental checklist to inspect unexpected communications before interacting with them."
+            },
+            {
+                id: "q_attachment",
+                questionHtml: "How should a user handle an unexpected attachment from an unknown sender?",
+                options: [
+                    { text: "Do not open or download it; verify the sender through a trusted separate channel or report it.", isCorrect: true },
+                    { text: "Open it right away, but only enable macros if Microsoft Word prompts you to do so.", isCorrect: false },
+                    { text: "Change the file extension to <code>.txt</code> so that it runs safely on your system.", isCorrect: false }
+                ],
+                explanationHtml: "Unexpected attachments can carry ransomware, keyloggers, or malicious macros. Never open unexpected files from unknown senders and never enable macros when prompted by office applications."
+            },
+            {
+                id: "q_link",
+                questionHtml: "How can a user inspect a suspicious link without clicking it?",
+                options: [
+                    { text: "Click the link and quickly close the browser tab before the website loads.", isCorrect: false },
+                    { text: "Hover the mouse cursor over the link or button to preview the true destination URL in the status bar.", isCorrect: true },
+                    { text: "Reply to the sender and ask them to confirm if the hyperlink is safe.", isCorrect: false }
+                ],
+                explanationHtml: "Hovering your mouse cursor over a link or button previews the actual destination URL in your browser or email client's status bar without triggering an HTTP request or loading malicious web content."
+            },
+            {
+                id: "q_action",
+                questionHtml: "What should a user do after accidentally clicking a suspicious link?",
+                options: [
+                    { text: "Restart the computer and keep working without telling anyone to avoid trouble.", isCorrect: false },
+                    { text: "Report it promptly to the IT/security team and follow their instructions.", isCorrect: true },
+                    { text: "Wait 24 hours to see if any unusual activity occurs on your account.", isCorrect: false }
+                ],
+                explanationHtml: "Prompt reporting allows security personnel to immediately isolate potential threats, block malicious URLs across the network, and secure affected accounts. Disconnect from the network if advised and reset passwords from a separate clean system."
+            }
+        ];
+
+        // Fisher-Yates array shuffling function
+        function shuffleArray(array) {
+            const arr = array.slice();
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                const temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            return arr;
+        }
+
+        // Holds current round's shuffled questions and shuffled options
+        let currentQuestions = [];
+
+        // Render a new randomized quiz round
+        function renderQuiz() {
+            // 1. Shuffle all 5 questions
+            const shuffledQuestions = shuffleArray(questionBank);
+
+            // 2. For each question, shuffle its options while retaining isCorrect
+            currentQuestions = shuffledQuestions.map(function(q) {
+                return {
+                    id: q.id,
+                    questionHtml: q.questionHtml,
+                    options: shuffleArray(q.options),
+                    explanationHtml: q.explanationHtml
+                };
+            });
+
+            // 3. Build HTML DOM
+            const container = document.getElementById('questionsContainer');
+            container.innerHTML = '';
+
+            currentQuestions.forEach(function(q, qIdx) {
+                const card = document.createElement('div');
+                card.className = 'question-card';
+                card.id = 'card-' + qIdx;
+
+                let cardHtml = '<div class="question-title">' +
+                    '<span class="question-num">Question ' + (qIdx + 1) + '.</span> ' +
+                    q.questionHtml +
+                    '</div>';
+
+                cardHtml += '<ul class="options-list">';
+                q.options.forEach(function(opt, optIdx) {
+                    cardHtml += '<li class="option-item">' +
+                        '<label class="option-label" id="label-' + qIdx + '-' + optIdx + '">' +
+                        '<input type="radio" name="question_' + qIdx + '" value="' + optIdx + '">' +
+                        '<span>' + opt.text + '</span>' +
+                        '</label>' +
+                        '</li>';
+                });
+                cardHtml += '</ul>';
+
+                cardHtml += '<div class="explanation-box" id="exp-' + qIdx + '">' +
+                    '<strong>Explanation:</strong> ' + q.explanationHtml +
+                    '</div>';
+
+                card.innerHTML = cardHtml;
+                container.appendChild(card);
+            });
+        }
+
+        function submitQuiz() {
+            const warningEl = document.getElementById('unansweredWarning');
+            warningEl.style.display = 'none';
+
+            // Check if all 5 questions have an answer selected
+            let allAnswered = true;
+            for (let i = 0; i < currentQuestions.length; i++) {
+                const selected = document.querySelector('input[name="question_' + i + '"]:checked');
+                if (!selected) {
+                    allAnswered = false;
+                    break;
+                }
+            }
+
+            if (!allAnswered) {
+                warningEl.style.display = 'block';
+                return;
+            }
+
+            let score = 0;
+
+            // Evaluate each question
+            currentQuestions.forEach(function(q, qIdx) {
+                const selected = document.querySelector('input[name="question_' + qIdx + '"]:checked');
+                const selectedIdx = parseInt(selected.value, 10);
+                const card = document.getElementById('card-' + qIdx);
+                const expBox = document.getElementById('exp-' + qIdx);
+
+                // Disable all inputs in this question to lock review mode
+                const options = document.querySelectorAll('input[name="question_' + qIdx + '"]');
+                options.forEach(function(opt) {
+                    opt.disabled = true;
+                });
+
+                // Find the index of the correct option in this randomized question
+                let correctIdx = -1;
+                for (let k = 0; k < q.options.length; k++) {
+                    if (q.options[k].isCorrect) {
+                        correctIdx = k;
+                        break;
+                    }
+                }
+
+                if (selectedIdx === correctIdx) {
+                    score++;
+                    card.classList.add('correct-card');
+                    card.classList.remove('incorrect-card');
+                    const label = document.getElementById('label-' + qIdx + '-' + selectedIdx);
+                    if (label) {
+                        label.classList.add('selected-correct');
+                    }
+                } else {
+                    card.classList.add('incorrect-card');
+                    card.classList.remove('correct-card');
+                    const selectedLabel = document.getElementById('label-' + qIdx + '-' + selectedIdx);
+                    if (selectedLabel) {
+                        selectedLabel.classList.add('selected-incorrect');
+                    }
+                    const correctLabel = document.getElementById('label-' + qIdx + '-' + correctIdx);
+                    if (correctLabel) {
+                        correctLabel.classList.add('correct-unselected');
+                    }
+                }
+
+                // Show explanation
+                if (expBox) {
+                    expBox.style.display = 'block';
+                }
+            });
+
+            // Display Score Banner
+            const banner = document.getElementById('scoreBanner');
+            const title = document.getElementById('scoreTitle');
+            const feedback = document.getElementById('scoreFeedback');
+
+            banner.className = 'score-banner'; // reset classes
+            title.textContent = 'Your Score: ' + score + ' / 5 (' + (score * 20) + '%)';
+
+            if (score === 5) {
+                banner.classList.add('score-good');
+                feedback.textContent = '🎉 Excellent! You correctly identified all phishing indicators and safety procedures.';
+            } else if (score >= 3) {
+                banner.classList.add('score-mid');
+                feedback.textContent = '👍 Good job! You passed the quiz. Review the highlighted explanations below to strengthen your vigilance.';
+            } else {
+                banner.classList.add('score-low');
+                feedback.textContent = '⚠️ Needs improvement. Review the Phishing Awareness Handout to better recognize critical red flags.';
+            }
+
+            banner.style.display = 'block';
+
+            // Toggle buttons
+            document.getElementById('btnSubmit').style.display = 'none';
+            document.getElementById('btnReset').style.display = 'inline-block';
+
+            // Smooth scroll to score banner
+            banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function resetQuiz() {
+            // Hide warning & score banner
+            document.getElementById('unansweredWarning').style.display = 'none';
+            const banner = document.getElementById('scoreBanner');
+            banner.style.display = 'none';
+
+            // Toggle buttons back
+            document.getElementById('btnSubmit').style.display = 'inline-block';
+            document.getElementById('btnReset').style.display = 'none';
+
+            // Re-render brand new randomized question and option order
+            renderQuiz();
+
+            // Scroll back to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize quiz on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            renderQuiz();
+        });
+    </script>
+</body>
+</html>

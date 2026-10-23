@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Phishing Awareness Security Handout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f7f9fa;
+            color: #212529;
+            padding: 24px;
+            margin: 0;
+            line-height: 1.6;
+        }
+        .sheet {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 36px 40px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            border: 1px solid #e2e8f0;
+        }
+        .header {
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            color: #0056b3;
+            font-size: 22px;
+            margin: 0;
+        }
+        .header span {
+            font-size: 13px;
+            color: #6c757d;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        h2 {
+            font-size: 17px;
+            color: #1a202c;
+            border-left: 4px solid #0056b3;
+            padding-left: 10px;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 16px 0;
+        }
+        .card {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 14px 16px;
+        }
+        .card h3 {
+            font-size: 15px;
+            color: #2b6cb0;
+            margin-top: 0;
+            margin-bottom: 6px;
+        }
+        .card p {
+            font-size: 13px;
+            margin: 0;
+            color: #4a5568;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            font-size: 13px;
+        }
+        th, td {
+            border: 1px solid #cbd5e0;
+            padding: 8px 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #edf2f7;
+            font-weight: 600;
+        }
+        .slam-highlight {
+            font-size: 16px;
+            font-weight: bold;
+            color: #c53030;
+            text-align: center;
+        }
+        .callout-box {
+            background-color: #ebf8ff;
+            border-left: 4px solid #3182ce;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin: 18px 0;
+            font-size: 13px;
+        }
+        .lab-note-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            color: #166534;
+            padding: 12px 16px;
+            border-radius: 4px;
+            margin: 18px 0;
+            font-size: 13px;
+        }
+        .quiz-item {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .quiz-item strong {
+            color: #1a202c;
+        }
+        .quiz-answer {
+            color: #2b6cb0;
+            margin-top: 5px;
+        }
+        .footer {
+            margin-top: 32px;
+            padding-top: 14px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 12px;
+            color: #718096;
+            text-align: center;
+        }
+        @media print {
+            body { background: #fff; padding: 0; }
+            .sheet { box-shadow: none; border: none; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="sheet">
+        <div class="header">
+            <div>
+                <h1>Phishing Awareness & Defense Guide</h1>
+                <div style="font-size: 13px; color: #4a5568;">Information Security Awareness Program</div>
+            </div>
+            <span>Internal Training Handout</span>
+        </div>
+
+        <div class="lab-note-box">
+            <strong>Lab Purpose &amp; Educational Note:</strong> This project operates in a safe, isolated local environment using GoPhish and MailHog. All simulations use fictitious dummy recipients, and the project strictly avoids any real password collection or data harvesting.
+        </div>
+
+        <h2>Core Phishing Indicators</h2>
+        <div class="grid-2">
+            <div class="card">
+                <h3>1. Suspicious Senders</h3>
+                <p>Check the actual email address behind the display name. Attackers use typo-squatted domains or free webmail providers.</p>
+            </div>
+            <div class="card">
+                <h3>2. Urgent Requests</h3>
+                <p>Deadlines like "within 24 hours" or threats of account cancellation are designed to provoke hasty emotional reactions.</p>
+            </div>
+            <div class="card">
+                <h3>3. Deceptive Links</h3>
+                <p>Always hover before clicking. Ensure the true destination URL matches the official legitimate service domain.</p>
+            </div>
+            <div class="card">
+                <h3>4. High-Risk Attachments</h3>
+                <p>Avoid unexpected archives or files with double extensions (e.g. <code>.pdf.exe</code>). Never enable macros on unknown files.</p>
+            </div>
+        </div>
+
+        <h2>The SLAM Verification Framework</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th width="15%">Letter</th>
+                    <th width="25%">Focus Area</th>
+                    <th>Safety Verification Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="slam-highlight">S</td>
+                    <td><strong>Sender</strong></td>
+                    <td>Verify sender domain accuracy and look for disguised addresses.</td>
+                </tr>
+                <tr>
+                    <td class="slam-highlight">L</td>
+                    <td><strong>Links</strong></td>
+                    <td>Hover to preview destination. Avoid clicking unverified links.</td>
+                </tr>
+                <tr>
+                    <td class="slam-highlight">A</td>
+                    <td><strong>Attachments</strong></td>
+                    <td>Verify unexpected attachments via secondary contact before opening.</td>
+                </tr>
+                <tr>
+                    <td class="slam-highlight">M</td>
+                    <td><strong>Message</strong></td>
+                    <td>Watch for grammar errors, urgent demands, or requests for passwords.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Reporting Procedure</h2>
+        <div class="callout-box">
+            <strong>How to report suspicious emails:</strong><br>
+            1. <strong>Do Not</strong> click any links, open attachments, or reply to the sender.<br>
+            2. <strong>Do Not</strong> forward suspicious messages to colleagues (this spreads the risk).<br>
+            3. <strong>Report</strong> the email to your organization's official reporting channel (such as the <em>Report Phishing</em> button in your email client or your IT security team's designated contact).<br>
+            <em>(Note: The address <code>phishing-reports@lab.local</code> mentioned in lab notes is only a simulated placeholder address unless a real lab mailbox has been configured. Always use your organization's official reporting channel).</em><br>
+            4. <strong>If you accidentally clicked a suspicious link:</strong> Report it promptly to the IT/security team and follow their instructions. Disconnect your computer from the network if advised, and change your password from an alternate, clean device.
+        </div>
+
+        <h2>Quick Self-Check Quiz (Viva &amp; Discussion)</h2>
+        <div class="quiz-item">
+            <strong>1. What does SLAM stand for?</strong>
+            <div class="quiz-answer"><strong>Answer:</strong> <strong>S</strong>ender, <strong>L</strong>inks, <strong>A</strong>ttachments, and <strong>M</strong>essage.</div>
+        </div>
+        <div class="quiz-item">
+            <strong>2. What should someone do after accidentally clicking a suspicious link?</strong>
+            <div class="quiz-answer"><strong>Answer:</strong> Report it promptly to the IT/security team and follow their instructions.</div>
+        </div>
+        <div class="quiz-item">
+            <strong>3. An email from "IT Helpdesk" states your password expires in 2 hours and links to an external login page. What should you do?</strong>
+            <div class="quiz-answer"><strong>Answer:</strong> Do not click. Open your web browser manually, go directly to your official IT portal, or call the IT desk directly to verify.</div>
+        </div>
+        <div class="quiz-item">
+            <strong>4. Why do attackers use urgent deadlines in phishing emails?</strong>
+            <div class="quiz-answer"><strong>Answer:</strong> To induce panic and bypass the victim's rational critical thinking.</div>
+        </div>
+        <div class="quiz-item">
+            <strong>5. Can a safe-looking .pdf file actually be malicious?</strong>
+            <div class="quiz-answer"><strong>Answer:</strong> Yes, through double extensions (e.g. <code>invoice.pdf.exe</code>) or embedded malicious links and PDF exploits.</div>
+        </div>
+
+        <div class="footer">
+            Cybersecurity Awareness Mini-Project • Handout for Training & Viva Defense
+        </div>
+    </div>
+</body>
+</html>

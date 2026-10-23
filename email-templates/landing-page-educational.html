@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Awareness Training — Phishing Simulation Drill</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #1c1e21;
+            padding: 30px 15px;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e4e6eb;
+            overflow: hidden;
+        }
+        .banner {
+            background-color: #e65100;
+            color: #ffffff;
+            padding: 24px;
+            text-align: center;
+        }
+        .banner h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .banner p {
+            font-size: 15px;
+            opacity: 0.95;
+        }
+        .content {
+            padding: 30px;
+        }
+        .badge {
+            display: inline-block;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        .card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            padding: 18px 20px;
+            margin-bottom: 24px;
+        }
+        .card h2 {
+            font-size: 17px;
+            color: #333333;
+            margin-bottom: 12px;
+        }
+        ul.flags {
+            list-style: none;
+            padding-left: 0;
+        }
+        ul.flags li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+        ul.flags li::before {
+            content: "🚩";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .steps-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin: 20px 0;
+        }
+        .step-box {
+            background: #ffffff;
+            border: 1px solid #ced4da;
+            border-radius: 6px;
+            padding: 14px;
+            text-align: center;
+        }
+        .step-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            background-color: #0d6efd;
+            color: #ffffff;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+        .step-box p {
+            font-size: 13px;
+            color: #495057;
+        }
+        .footer {
+            background-color: #f1f3f5;
+            padding: 16px;
+            text-align: center;
+            font-size: 12px;
+            color: #6c757d;
+            border-top: 1px solid #dee2e6;
+        }
+        @media (max-width: 600px) {
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="banner">
+            <h1>⚠️ Security Awareness Demonstration</h1>
+            <p>You clicked a link in a simulated phishing exercise!</p>
+        </div>
+
+        <div class="content">
+            <span class="badge">Safe Demonstration — No Data Captured</span>
+
+            <p style="font-size: 15px; margin-bottom: 16px;">
+                <strong>Don't panic!</strong> This was an authorized cybersecurity simulation drill conducted on a local test environment. Your system was not infected, and no personal passwords or confidential data were collected.
+            </p>
+
+            <div class="card">
+                <h2>Red Flags You May Have Overlooked in the Email:</h2>
+                <ul class="flags">
+                    <li><strong>Artificial Sense of Urgency:</strong> Demands immediate action within "24 hours" or threats of account suspension.</li>
+                    <li><strong>Generic or Mismatched Sender:</strong> The display name may look official, but the actual sender domain was fictitious.</li>
+                    <li><strong>Unverified Link Destination:</strong> The text said "Validate" or "Reschedule", but hovering over the button revealed an unexpected URL.</li>
+                    <li><strong>Unsolicited Request:</strong> Prompting you to verify system credentials or packages without prior notice.</li>
+                </ul>
+            </div>
+
+            <h3 style="font-size: 16px; margin-bottom: 10px;">What Should You Do in Real Life?</h3>
+            <div class="steps-grid">
+                <div class="step-box">
+                    <div class="step-num">1</div>
+                    <strong>Stop & Think</strong>
+                    <p>Never rush into clicking links under artificial deadlines.</p>
+                </div>
+                <div class="step-box">
+                    <div class="step-num">2</div>
+                    <strong>Hover First</strong>
+                    <p>Hover your cursor over the link to verify the true URL destination.</p>
+                </div>
+                <div class="step-box">
+                    <div class="step-num">3</div>
+                    <strong>Report to IT</strong>
+                    <p>Forward suspicious emails directly to your IT security helpdesk.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            Authorized Cybersecurity Mini-Project • Phishing Simulation & Security Awareness Lab • Localhost Demonstration Only
+        </div>
+    </div>
+</body>
+</html>

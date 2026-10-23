@@ -1,0 +1,20 @@
+[ACADEMIC LAB SIMULATION EXERCISE ONLY - DO NOT ENTER REAL PASSWORDS]
+
+Dear {{.FirstName}},
+
+Our centralized IT systems have detected an outdated security root certificate on your assigned workstation. Due to mandatory internal compliance requirements, all user workstations must validate their configuration.
+
+ACTION REQUIRED: Failure to validate your device certificate within 24 hours will result in temporary suspension of your single sign-on privileges.
+
+Please visit the link below to initiate the self-service validation protocol:
+{{.URL}}
+
+If you encounter difficulties during the automated verification process, submit an internal ticket via your department's designated channel.
+
+Regards,
+Global IT Infrastructure & Security Operations
+Internal Support Extension: 4102
+
+----------------------------------------------------------------------
+This message was generated as part of an authorized academic cybersecurity simulation project.
+Simulated ID: LAB-SIM-{{.RId}} | No real passwords or credentials will ever be requested.

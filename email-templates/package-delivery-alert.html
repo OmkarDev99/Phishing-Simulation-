@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urgent: Attempted Delivery Notice - Action Required</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f6f7fb;
+            margin: 0;
+            padding: 20px;
+            color: #2b2b2b;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .disclaimer-banner {
+            background-color: #fff3cd;
+            color: #856404;
+            border-bottom: 2px solid #ffeeba;
+            padding: 10px 16px;
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .brand-header {
+            background-color: #d9381e;
+            color: #ffffff;
+            padding: 18px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .brand-header h2 {
+            margin: 0;
+            font-size: 19px;
+            font-weight: 700;
+        }
+        .content {
+            padding: 24px 24px 16px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .tracking-box {
+            background-color: #fdf2f0;
+            border: 1px dashed #d9381e;
+            border-radius: 4px;
+            padding: 14px 18px;
+            margin: 16px 0;
+            font-size: 13px;
+        }
+        .tracking-box table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .tracking-box td {
+            padding: 4px 0;
+        }
+        .btn-wrapper {
+            margin: 24px 0 16px;
+            text-align: center;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #d9381e;
+            color: #ffffff !important;
+            text-decoration: none;
+            padding: 13px 28px;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .notice-text {
+            font-size: 12px;
+            color: #666666;
+            margin-top: 15px;
+        }
+        .footer {
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            padding: 14px 20px;
+            font-size: 11px;
+            color: #888888;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Prominent Safety & Lab Disclaimer Banner -->
+        <div class="disclaimer-banner">
+            ⚠️ ACADEMIC LAB SIMULATION EXERCISE ONLY • DO NOT ENTER PASSWORDS • ISOLATED TESTBED
+        </div>
+
+        <div class="brand-header">
+            <h2>Express Global Logistics</h2>
+        </div>
+
+        <div class="content">
+            <p>Hello {{.FirstName}},</p>
+
+            <p>We attempted to deliver your parcel today, but our courier was unable to obtain access or complete the verification signature for your address.</p>
+
+            <div class="tracking-box">
+                <table>
+                    <tr>
+                        <td width="40%"><strong>Tracking Number:</strong></td>
+                        <td>EXP-8941029-US</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Status:</strong></td>
+                        <td><span style="color: #d9381e; font-weight: bold;">Delivery Suspended</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Holding Center:</strong></td>
+                        <td>Regional Depot 4</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p>Your package will be held at our regional dispatch facility for a maximum of <strong>48 hours</strong> before being returned to the sender. Please reschedule delivery or update delivery instructions immediately.</p>
+
+            <div class="btn-wrapper">
+                <a href="{{.URL}}" class="btn" target="_blank">Reschedule Delivery Online</a>
+            </div>
+
+            <p class="notice-text">
+                * Note: Standard redelivery fees are waived if scheduled within the 48-hour holding window.
+            </p>
+        </div>
+
+        <div class="footer">
+            This message is part of an educational phishing simulation for cybersecurity awareness training.<br>
+            Recipient Key: {{.RId}} | No commercial transaction or personal data involved.
+        </div>
+    </div>
+    <!-- GoPhish Tracking Pixel -->
+    {{.Tracker}}
+</body>
+</html>

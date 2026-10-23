@@ -1,0 +1,31 @@
+# Compiled binaries and large archives
+*.exe
+*.zip
+*.tar.gz
+*.7z
+
+# Local GoPhish databases, backups, and private keys
+*.db
+*.sqlite
+*.sqlite3
+*.key
+
+# GoPhish vendor assets and templates (bundled in GoPhish releases)
+GoPhish/gophish-v0.12.1-windows-64bit/static/
+GoPhish/gophish-v0.12.1-windows-64bit/templates/
+GoPhish/gophish-v0.12.1-windows-64bit/db/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Sensitive environment files
+.env
+
+# Temporary and OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp

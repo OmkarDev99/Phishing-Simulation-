@@ -1,0 +1,5 @@
+Campaign_ID,Campaign_Name,Status,Launch_Date,Total_Recipients,Sent,Opened,Open_Rate_%,Clicked,Click_Rate_%,Submitted_Data,Reported,Reporting_Rate_%,Campaign_Type,Notes
+1,Campaign 1 - Baseline Test,In progress,2026-10-22T19:15:00Z,1,1,0,0.0%,0,0.0%,0,0,0.0%,Baseline Assessment,Initial baseline measurement before security awareness training
+2,Campaign 1 - Tracking Test,In progress,2026-10-22T19:40:00Z,1,1,1,100.0%,1,100.0%,0,0,0.0%,Technical Tracking Verification,Technical verification test to validate tracking pixel and redirect handling
+3,Campaign 2 - Post-Training Evaluation,In progress,2026-10-22T20:41:00Z,1,1,0,0.0%,0,0.0%,0,0,0.0%,Post-Training Evaluation,Post-awareness training evaluation campaign to measure behavioral improvement.
+4,Campaign 3 - Tracking Verification,In progress,2026-10-22T20:51:00Z,1,1,1,100.0%,1,100.0%,0,0,0.0%,Technical Tracking Verification,Technical verification test to validate tracking pixel and redirect handling.

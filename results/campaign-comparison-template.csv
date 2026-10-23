@@ -1,0 +1,12 @@
+Metric_ID,Metric_Category,Metric_Name,Campaign_1_Baseline,Campaign_2_Post_Training,Difference_Absolute,Percentage_Improvement,Notes_and_Interpretation
+M01,Delivery,Total Target Recipients,,,,,
+M02,Delivery,Emails Successfully Delivered,,,,,
+M03,Delivery,Emails Bounced / Delivery Failures,,,,,
+M04,Engagement,Emails Opened (Count),,,,,
+M05,Engagement,Open Rate (%),,,,,
+M06,Vulnerability,Links Clicked (Count),,,,,
+M07,Vulnerability,Click-Through Rate (CTR) (%),,,,,
+M08,Education,Demonstration Pages Viewed,,,,,
+M09,Compliance,Real Passwords / Sensitive Data Harvested,0,0,0,0%,Enforced 0 by project rules (No credential forms)
+M10,Defense,Phishing Reports Forwarded to IT,,,,,
+M11,Defense,Reporting Rate (%),,,,,

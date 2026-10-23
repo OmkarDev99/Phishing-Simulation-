@@ -1,0 +1,19 @@
+[ACADEMIC LAB SIMULATION EXERCISE ONLY - DO NOT ENTER REAL PASSWORDS]
+
+Hello {{.FirstName}},
+
+We attempted to deliver your parcel today, but our courier was unable to obtain access or complete the verification signature for your address.
+
+Tracking Number: EXP-8941029-US
+Status: Delivery Suspended
+Holding Center: Regional Depot 4
+
+Your package will be held at our regional dispatch facility for a maximum of 48 hours before being returned to the sender. Please reschedule delivery or update delivery instructions immediately:
+
+{{.URL}}
+
+* Note: Standard redelivery fees are waived if scheduled within the 48-hour holding window.
+
+----------------------------------------------------------------------
+This message is part of an educational phishing simulation for cybersecurity awareness training.
+Recipient Key: {{.RId}} | No commercial transaction or personal data involved.
